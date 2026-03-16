@@ -1,0 +1,15 @@
+[submodule "pack/plugins/start/everforest"]
+	path = pack/plugins/start/everforest
+	url = https://github.com/sainnhe/everforest
+[submodule "pack/plugins/start/undotree"]
+	path = pack/plugins/start/undotree
+	url = https://github.com/mbbill/undotree
+[submodule "pack/plugins/start/vim-surround"]
+	path = pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "pack/plugins/start/vim-commentary"]
+	path = pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "pack/plugins/start/fzf-vim"]
+	path = pack/plugins/start/fzf-vim
+	url = https://github.com/junegunn/fzf.vim

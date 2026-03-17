@@ -16,3 +16,6 @@ desugars
 destructure
 destructuring
 UI
+LiteralNumber
+LiteralString
+LiteralBoolean

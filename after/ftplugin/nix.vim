@@ -1,1 +1,1 @@
-setlocal formatprg=nixfmt
+setlocal equalprg=nixfmt

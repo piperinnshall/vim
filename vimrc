@@ -48,8 +48,9 @@ nnoremap <Esc> <cmd>nohlsearch<cr>
 nnoremap <C-p> :find 
 nnoremap <C-c> <cmd>cclose<cr>
 nnoremap g= <cmd>Format<cr>
-nnoremap [q :cprevious<CR>
-nnoremap ]q :cnext<CR>
+nnoremap z= 1z=
+nnoremap [q :cprevious<cr>
+nnoremap ]q :cnext<cr>
 nnoremap <leader>u <cmd>UndotreeToggle<cr>
 nnoremap gcc <Plug>CommentaryLine
 vnoremap gc <Plug>Commentary
@@ -77,4 +78,3 @@ colorscheme everforest
 hi StatusLineNC  guibg=NONE
 hi StatusLine    guibg=NONE
 hi Folded        guibg=NONE
-

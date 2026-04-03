@@ -1,3 +1,3 @@
 setlocal makeprg=cargo\ run
-setlocal equalprg=rustfmt\ 
-setlocal keywordprg=rusty-man
+setlocal formatprg=rustfmt\ 
+" setlocal keywordprg=rusty-man

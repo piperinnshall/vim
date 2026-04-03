@@ -1,3 +1,3 @@
 " setlocal makeprg=./gradlew\ run
-setlocal formatprg=google-java-format\ -
+setlocal formatprg=google-java-format\ - 
 

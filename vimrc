@@ -16,8 +16,6 @@ set smartindent
 set ignorecase
 set smartcase
 set autowrite
-set exrc
-set secure
 set spell
 set incsearch
 set hlsearch
@@ -63,8 +61,10 @@ command! Spell normal! ciw \<C-x>\<C-s>
 command! Format let b:pos = getpos('.') | execute 'normal! gg gqG' | call setpos('.', b:pos) | normal! zz
 
 for l in (filereadable('.ignore') ? readfile('.ignore') : []) + (filereadable('.gitignore') ? readfile('.gitignore') : [])
-  let l = trim(substitute(l, '/$', '', ''))
-  if l != '' && l !~ '^#' | exe 'set wildignore+=*/' . l . '/*' | endif
+  let l = trim(substitute(l, '/\+$', '', ''))
+  if l != '' && l !~ '^#'
+    execute 'set wildignore+=*/' . l . '/*'
+  endif
 endfor
 
 :iabbrev @@ Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas iaculis massa nisl malesuada lacinia integer nunc posuere ut hendrerit.
@@ -75,6 +75,6 @@ let &t_Ce = "\e[4:0m"
 syntax on
 filetype plugin indent on
 colorscheme everforest
-hi StatusLineNC  guibg=NONE
-hi StatusLine    guibg=NONE
-hi Folded        guibg=NONE
+hi StatusLineNC guibg=NONE
+hi StatusLine   guibg=NONE
+hi Folded       guibg=NONE

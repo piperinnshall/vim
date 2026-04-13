@@ -59,3 +59,14 @@ NTP
 SNMP
 #ommand
 command/!
+#z
+nz/!
+ac/!
+ac
+NWEN303
+innshpipe@myvuw.ac.nz
+#ravitationalConstant
+#ightSpeed
+lightSpeed/!
+gravitationalConstant/!
+NNF

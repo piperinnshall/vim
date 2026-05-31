@@ -55,6 +55,7 @@ vnoremap gc <Plug>Commentary
 
 autocmd BufWinLeave * silent! mkview
 autocmd BufWinEnter * silent! loadview
+autocmd BufRead,BufNewFile *.fear setfiletype rust | setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 command! CTags execute '!universal-ctags -R .'
 command! Spell normal! ciw \<C-x>\<C-s>

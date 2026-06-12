@@ -38,17 +38,17 @@ set shell=/etc/profiles/per-user/piperinnshall/bin/bash
 set statusline=\ \ \ %f\ %l:%c\ %m
 set fillchars=eob:\ ,fold:\ ,foldopen:│,foldsep:│,foldclose:›
 
-vnoremap <leader>y "+y
-nnoremap <leader>y "+y
-nnoremap <leader>e <cmd>Ex<cr>
-nnoremap <leader>ct <cmd>CTags<cr>
-nnoremap <Esc> <cmd>nohlsearch<cr>
 nnoremap <C-p> :find 
 nnoremap <C-c> <cmd>cclose<cr>
+nnoremap <Esc> <cmd>nohlsearch<cr>
+nnoremap <leader>e <cmd>Ex<cr>
+nnoremap <leader>ct <cmd>!universal-ctags -R .<cr>
 nnoremap g= <cmd>Format<cr>
 nnoremap z= 1z=
 nnoremap [q :cprevious<cr>
 nnoremap ]q :cnext<cr>
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
 nnoremap <leader>u <cmd>UndotreeToggle<cr>
 nnoremap gcc <Plug>CommentaryLine
 vnoremap gc <Plug>Commentary
@@ -57,9 +57,7 @@ autocmd BufWinLeave * silent! mkview
 autocmd BufWinEnter * silent! loadview
 autocmd BufRead,BufNewFile *.fear setfiletype rust | setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
-command! CTags execute '!universal-ctags -R .'
-command! Spell normal! ciw \<C-x>\<C-s>
-command! Format let b:pos = getpos('.') | execute 'normal! gg gqG' | call setpos('.', b:pos) | normal! zz
+command! Format let b:pos = getpos('.') | execute 'Fmt' | call setpos('.', b:pos) | normal! zz
 
 for l in (filereadable('.ignore') ? readfile('.ignore') : []) + (filereadable('.gitignore') ? readfile('.gitignore') : [])
   let l = trim(substitute(l, '/\+$', '', ''))
@@ -70,12 +68,11 @@ endfor
 
 :iabbrev @@ Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas iaculis massa nisl malesuada lacinia integer nunc posuere ut hendrerit.
 
-let &t_Cs = "\e[4:3m"
-let &t_Ce = "\e[4:0m"
-
 syntax on
 filetype plugin indent on
-colorscheme everforest
+colorscheme     everforest
+let &t_Cs =     "\e[4:3m"
+let &t_Ce =     "\e[4:0m"
 hi StatusLineNC guibg=NONE
 hi StatusLine   guibg=NONE
 hi Folded       guibg=NONE

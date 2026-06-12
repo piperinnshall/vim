@@ -1,1 +1,2 @@
-setlocal formatprg=nixfmt
+setlocal formatprg=nixfmt\ -
+command! -buffer Fmt %!nixfmt -

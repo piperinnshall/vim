@@ -1,2 +1,2 @@
 setlocal formatprg=nixfmt\ -
-command! -buffer Fmt %!nixfmt -
+command! -buffer Format %!nixfmt -

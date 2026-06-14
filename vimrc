@@ -1,4 +1,4 @@
-set nocompatible            " Enter the current millennium ... Last modified 14/06/2026
+" Last modified             14/06/2026
 
 let mapleader               = ' '
 let g:everforest_background = 'hard'
@@ -60,7 +60,7 @@ set noswapfile
 set nowrap
 set noshowmode
 set expandtab
-set smartindent
+set autoindent
 set ignorecase
 set smartcase
 set autowrite

@@ -1,4 +1,3 @@
-pack
-view
-undodir
-tags
+pack/
+view/
+undodir/

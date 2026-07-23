@@ -70,4 +70,4 @@ set hlsearch
 set termguicolors
 set undofile
 
-for l in filter(readfile('.ignore'), 'trim(v:val) !=# ""') | let &wildignore .= ',*/' . trim(l) . '/*,' . trim(l) | endfor
+for l in filereadable('.ignore') ? filter(readfile('.ignore'), 'trim(v:val) =~# "/$"') : [] | let l = trim(l[:-2]) | let &wildignore .= ',*/' . l . '/*,' . l | endfor
